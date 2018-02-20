@@ -26,16 +26,16 @@ import {TerapieComponent} from './terapie.component';
     MatExpansionModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  entryComponents: [DialogComponent],
+  entryComponents: [DialogComponent,],
   providers: [],
   exports: [
-    DialogComponent],
+    DialogComponent,],
   bootstrap: [
     AppComponent,
     TerapieComponent,
-    LoginComponent]
+    LoginComponent,]
 })
 export class AppModule {
 }
