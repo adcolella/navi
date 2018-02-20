@@ -25,7 +25,7 @@ interface Paziente {
 export class AppComponent implements OnInit {
 
   title = 'app';
-  baseRoot = 'https://adcolella.github.io/navi/';
+
   public pazienti: Paziente[] = [];
 
   panelOpenState: boolean = false;
