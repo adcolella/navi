@@ -1,0 +1,48 @@
+{
+  "pazienti": [
+     {
+      "nome": "Pippo Verdi",
+      "sesso": "M",
+      "id": "001",
+      "malattia": "cirrosi",
+      "nota": "scalmanato",
+      "endDate": "12-03-2018",
+      "terapia": [
+        {
+          "data": "11-03-2018",
+          "nota": "pillola blu"
+        },
+        {
+          "data": "10-03-2018",
+          "nota": "pillola blu"
+        },
+        {
+          "data": "09-03-2018",
+          "nota": "pillola rossa"
+        }
+      ]
+    },
+    {
+      "nome": "Pippa Bianchi",
+      "sesso": "F",
+      "id": "002",
+      "malattia": "Diabete",
+      "nota": "cessa",
+      "endDate": "20-03-2018",
+      "terapia": [
+        {
+          "data": "10-03-2018",
+          "nota": "pillola blu"
+        },
+        {
+          "data": "15-03-2018",
+          "nota": "pillola blu"
+        },
+        {
+          "data": "19-03-2018",
+          "nota": "pillola rossa"
+        }
+      ]
+    }
+  ]
+}

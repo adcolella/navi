@@ -5,11 +5,10 @@ import {Component, ElementRef, OnInit, ViewChild, AfterViewChecked} from '@angul
   templateUrl: './terapie.component.html'
 })
 export class TerapieComponent  {
-
+  panelOpenState: boolean = false;
 
   constructor() {
   }
 
 
 }
-

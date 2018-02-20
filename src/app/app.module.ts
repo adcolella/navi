@@ -8,15 +8,17 @@ import {
   MatButtonModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AppComponent, DialogComponent} from './app.component';
+import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
-import {TerapieComponent} from './terapie.component';
+import {TerapieComponent} from './terapie/terapie.component';
+import {RepartoComponent, DialogComponent} from './reparto/reparto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DialogComponent,
+    RepartoComponent,
     TerapieComponent,
   ],
   imports: [
@@ -31,7 +33,8 @@ import {TerapieComponent} from './terapie.component';
   entryComponents: [DialogComponent,],
   providers: [],
   exports: [
-    DialogComponent,],
+    DialogComponent,
+  ],
   bootstrap: [
     AppComponent,
     TerapieComponent,
