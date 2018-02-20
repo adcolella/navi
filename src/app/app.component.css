@@ -9,6 +9,7 @@
 
 .card {
   width: 20%;
+  max-width: 200px;
   margin: 20px;
   display: inline-block;
 }
@@ -18,3 +19,12 @@
   background-size: cover;
 }
 
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
