@@ -7,12 +7,21 @@
   border: 1px solid black;
 }
 
-.card {
-  width: 20%;
-  max-width: 200px;
-  margin: 20px;
-  display: inline-block;
+.mat-tab-group:first-child {
+  width: 100% !important;
 }
+
+.box{
+  margin-top: 20px;
+  width: 80%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -28,3 +37,4 @@
   justify-content: space-between;
   align-items: center;
 }
+

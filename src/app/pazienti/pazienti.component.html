@@ -1,0 +1,106 @@
+<!--
+<div *ngIf="pazienti?.length > 0" >
+<mat-card *ngFor=" let item of pazienti" class="card">
+  <mat-card-header>
+    &lt;!&ndash;<div mat-card-avatar class="example-header-image"></div>&ndash;&gt;
+    <mat-card-title>{{item.nome}}</mat-card-title>
+    <mat-card-subtitle>{{item.sesso}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{baseRoot}}/assets/img/{{item.sesso}}.png " alt="img">
+
+  <mat-card-content>
+    <p><strong>Nota </strong></p>
+    <p>
+      {{item.nota}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="openDialog(item)">DETAIL</button>
+
+  </mat-card-actions>
+</mat-card>
+</div>
+-->
+
+<!--
+
+<mat-form-field>
+  <input matInput placeholder="First name">
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput placeholder="Age">
+</mat-form-field>-->
+<div class="box" *ngIf="pazienti">
+<mat-table [dataSource]="pazienti"  >
+
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="malattia">
+    <mat-header-cell *matHeaderCellDef> Patologia </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.malattia}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fine">
+    <mat-header-cell *matHeaderCellDef> Data Operazione </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.endDate}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nota">
+    <mat-header-cell *matHeaderCellDef> Nota </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+</div>
+
+
+<div class="example-container">
+
+  <h3>Aggiungi Paziente</h3>
+
+  <mat-form-field>
+    <input  matInput #nome  placeholder="Nome e Cognome">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select #sesso placeholder="Sesso">
+      <mat-option value="M">Maschio</mat-option>
+      <mat-option value="F">Femmina</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+
+
+  <mat-form-field>
+    <input matInput #malattia placeholder="Patologia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput #data [matDatepicker]="picker" placeholder="Data Operazione">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput #nota placeholder="Nota"></textarea>
+  </mat-form-field>
+
+  <div class="button-row">
+
+    <button (click)="salva(nome.value,
+                            sesso.value,
+                            malattia.value,
+                            data.value,
+                            nota.value)" mat-raised-button color="primary">Salva</button>
+
+  </div>
+
+</div>

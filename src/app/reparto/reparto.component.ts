@@ -1,6 +1,14 @@
 import {Component, ElementRef, OnInit, ViewChild, AfterViewChecked, Inject} from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { initializeApp, database } from 'firebase';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {initializeApp, database} from 'firebase';
+import {AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
+import {any} from 'codelyzer/util/function';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {FirebaseListObservable} from 'angularfire2/database-deprecated';
+import * as firebase from 'firebase/app';
+import {AngularFireStorage} from 'angularfire2/storage';
+
 
 interface Paziente {
   nome: string,
@@ -20,40 +28,63 @@ interface Paziente {
 
 @Component({
   selector: 'app-reparto',
-  templateUrl: './reparto.component.html'
+  templateUrl: './reparto.component.html',
+  styles: [`
+
+    .card {
+      width: 10%;
+      max-width: 200px;
+      margin: 20px;
+      display: inline-block;
+    }
+
+  `]
 })
 export class RepartoComponent implements OnInit {
+
   baseRoot = 'https://adcolella.github.io/navi/';
-  public pazienti: Paziente[] = [];
-  public root: any;
+  public pazienti: Observable<any[]>;
 
-  constructor(public dialog: MatDialog) {
 
-    // Initialize Firebase
- /*   var config = {
-      apiKey: "AIzaSyAzceSb_Y932ZVgvn7dBJ1t-N2x4fuo8So",
-      authDomain: "navi-e7fdb.firebaseapp.com",
-      databaseURL: "https://navi-e7fdb.firebaseio.com",
-      projectId: "navi-e7fdb",
-      storageBucket: "navi-e7fdb.appspot.com",
-      messagingSenderId: "511520597969"
-    };
-    initializeApp(config);
+  constructor(public dialog: MatDialog,
+              public db: AngularFireDatabase) {
 
-    this.root = database().ref();
-*/
+
+    this.pazienti = db.list('/pazienti').valueChanges();
+    // console.log(this.pazienti);
+
+
+    // this.pazienti.push([{content: 'value', done: false}]);
+
+    /* // Initialize Firebase
+     var config = {
+       apiKey: 'AIzaSyAzceSb_Y932ZVgvn7dBJ1t-N2x4fuo8So',
+       authDomain: 'navi-e7fdb.firebaseapp.com',
+       databaseURL: 'https://navi-e7fdb.firebaseio.com',
+       projectId: 'navi-e7fdb',
+       storageBucket: 'navi-e7fdb.appspot.com',
+       messagingSenderId: '511520597969'
+     };
+     initializeApp(config);
+
+     this.root = database().ref();*/
 
 
   }
 
 
   ngOnInit() {
-    /*
-    this.root.on( 'value', function(snap){
 
-      console.log(snap.val());
-    });
-*/
+    //  this.root.on('value', function (snap) {
+
+    //  console.log(snap.val().pazienti);
+
+    // let result = snap.val();
+    //  this.pazienti = snap.val().pazienti;
+    //  console.log(this.pazienti);
+
+
+    //  });
 
 
     /*   let pippo: Paziente;
@@ -113,7 +144,7 @@ export class RepartoComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '50%',
 
-      data: { paziente: paziente}
+      data: {paziente: paziente}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -127,16 +158,15 @@ export class RepartoComponent implements OnInit {
 @Component({
   selector: 'app-dialog',
   template: `
-    <div> <strong>Paziente</strong> </div>
+    <div><strong>Paziente</strong></div>
     <div><p>{{data.paziente.nome}}</p></div>
     <div><p>{{data.paziente.malattia}}</p></div>
     <button (click)="close()">close</button>`,
 })
 export class DialogComponent {
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(public dialogRef: MatDialogRef<DialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   close(): void {

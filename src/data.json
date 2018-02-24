@@ -1,6 +1,6 @@
 {
-  "pazienti": [
-     {
+  "pazienti": {
+    "paziente001": {
       "nome": "Pippo Verdi",
       "sesso": "M",
       "id": "001",
@@ -22,7 +22,7 @@
         }
       ]
     },
-    {
+    "paziente002": {
       "nome": "Pippa Bianchi",
       "sesso": "F",
       "id": "002",
@@ -44,5 +44,5 @@
         }
       ]
     }
-  ]
+  }
 }
