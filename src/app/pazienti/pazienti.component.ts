@@ -54,7 +54,7 @@ export class PazientiComponent implements OnInit {
 
   public pazienti: Observable<any[]>;
   public pazientiArray: AngularFireList<any[]>;
-  displayedColumns = ['nome', 'malattia', 'fine', 'nota'];
+  displayedColumns = ['nome', 'malattia', 'fine'];
 
   public newPaziente: any = {};
 

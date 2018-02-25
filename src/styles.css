@@ -1,3 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "../node_modules/fullcalendar/dist/fullcalendar.min.css";
+
+.box{
+  margin: 20px;
+  width: 80%;
+}

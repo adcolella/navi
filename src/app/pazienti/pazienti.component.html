@@ -31,8 +31,8 @@
 <mat-form-field>
   <input matInput placeholder="Age">
 </mat-form-field>-->
-<div class="box" *ngIf="pazienti">
-<mat-table [dataSource]="pazienti"  >
+<div  *ngIf="pazienti">
+<mat-table class="box"  [dataSource]="pazienti"  >
 
   <ng-container matColumnDef="nome">
     <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
@@ -49,10 +49,10 @@
     <mat-cell *matCellDef="let element"> {{element.endDate}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="nota">
+<!--  <ng-container matColumnDef="nota">
     <mat-header-cell *matHeaderCellDef> Nota </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
-  </ng-container>
+  </ng-container>-->
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
