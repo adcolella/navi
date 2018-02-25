@@ -11,63 +11,63 @@ export class MyCalendarComponent {
    calendarOptions: Object = {
       height: 'parent',
       fixedWeekCount: false,
-      defaultDate: '2016-09-12',
+      defaultDate: '2018-02-25',
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
         {
           title: 'All Day Event',
-          start: '2016-09-01'
+          start: '2018-02-01'
         },
         {
           title: 'Long Event',
-          start: '2016-09-07',
-          end: '2016-09-10'
+          start: '2018-02-07',
+          end: '2018-02-10'
         },
         {
           id: 999,
           title: 'Repeating Event',
-          start: '2016-09-09T16:00:00'
+          start: '2016-02-09T16:00:00'
         },
         {
           id: 999,
           title: 'Repeating Event',
-          start: '2016-09-16T16:00:00'
+          start: '2018-02-26T16:00:00'
         },
         {
           title: 'Conference',
-          start: '2016-09-11',
-          end: '2016-09-13'
+          start: '2018-02-11',
+          end: '2018-02-13'
         },
         {
           title: 'Meeting',
-          start: '2016-09-12T10:30:00',
-          end: '2016-09-12T12:30:00'
+          start: '2018-02-12T10:30:00',
+          end: '2018-02-12T12:30:00'
         },
         {
           title: 'Lunch',
-          start: '2016-09-12T12:00:00'
+          start: '2018-02-12T12:00:00'
         },
         {
           title: 'Meeting',
-          start: '2016-09-12T14:30:00'
+          start: '2018-02-12T14:30:00'
         },
         {
           title: 'Happy Hour',
-          start: '2016-09-12T17:30:00'
+          start: '2018-02-12T17:30:00'
         },
         {
           title: 'Dinner',
-          start: '2016-09-12T20:00:00'
+          start: '2018-02-12T20:00:00'
         },
         {
           title: 'Birthday Party',
-          start: '2016-09-13T07:00:00'
+          start: '2018-02-13T07:00:00'
         },
         {
           title: 'Click for Google',
           url: 'http://google.com/',
-          start: '2016-09-28'
+          start: '2018-02-28'
         }
       ]
     };

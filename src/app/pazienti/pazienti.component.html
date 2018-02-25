@@ -65,8 +65,15 @@
 
   <h3>Aggiungi Paziente</h3>
 
-  <mat-form-field>
+  <!--<mat-form-field>
     <input  matInput #nome  placeholder="Nome e Cognome">
+  </mat-form-field>-->
+
+  <mat-form-field>
+    <mat-select #nome placeholder="Nome e Cognome">
+      <mat-option value="Mario Rossi">Mario Rossi</mat-option>
+      <mat-option value="Laura Verdi">Laura Verdi</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field>
@@ -74,13 +81,17 @@
       <mat-option value="M">Maschio</mat-option>
       <mat-option value="F">Femmina</mat-option>
     </mat-select>
-
   </mat-form-field>
 
-
+ <!-- <mat-form-field>
+    <input matInput #malattia placeholder="Patologia">
+  </mat-form-field>-->
 
   <mat-form-field>
-    <input matInput #malattia placeholder="Patologia">
+    <mat-select #malattia placeholder="Patologia">
+      <mat-option value="Patologia1">Patologia1</mat-option>
+      <mat-option value="patologia2">Patologia2</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field>

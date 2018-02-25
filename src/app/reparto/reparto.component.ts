@@ -33,6 +33,7 @@ interface Paziente {
 
     .card {
       width: 10%;
+      min-width: 100px;
       max-width: 200px;
       margin: 20px;
       display: inline-block;
